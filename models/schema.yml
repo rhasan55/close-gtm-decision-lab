@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: stg_visits
+    description: Retry-deduplicated human visits; missing UTMs use explicit click mapping before referrer.
+    columns:
+      - name: event_id
+        data_tests: [unique, not_null]
+      - name: channel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [brand, nonbrand, content, partner, unknown]
+  - name: stg_identity
+    description: Only unambiguous deterministic anonymous-to-organization mappings.
+    columns:
+      - name: anon_id
+        data_tests: [unique, not_null]
+      - name: org_id
+        data_tests:
+          - relationships:
+              arguments: {to: "ref('raw_trials')", field: org_id}
+  - name: fct_visitors
+    description: One first human visitor; quarantines ambiguous identity, with 14-day trial endpoint.
+    columns:
+      - name: anon_id
+        data_tests: [unique, not_null]
+  - name: fct_trials
+    description: One trial organization, 7-day activation and net paid within 30 days; frozen as-of 2026-11-20.
+    columns:
+      - name: org_id
+        data_tests: [unique, not_null]
+      - name: channel
+        data_tests: [not_null]
+

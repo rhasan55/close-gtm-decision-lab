@@ -1,0 +1,14 @@
+name: close_gtm_lab
+version: '1.0.0'
+config-version: 2
+profile: close_gtm_lab
+model-paths: [models]
+seed-paths: [seeds]
+test-paths: [tests/sql]
+models:
+  close_gtm_lab:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+

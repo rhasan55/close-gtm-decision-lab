@@ -1,0 +1,8 @@
+close_gtm_lab:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: target/close_gtm.duckdb
+      threads: 2
+

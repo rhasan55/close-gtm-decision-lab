@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+target/
+logs/
+*.duckdb*
+seeds/*.csv
+.DS_Store
+dist/
+docs/close-gtm-decision-lab.zip
+
+
+.user.yml
