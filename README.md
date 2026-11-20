@@ -4,7 +4,7 @@
 
 Independent portfolio work by Hasan Raja. All analytical records and results are synthetic. No Close systems, private data, customer records, or credentials are used. Public sources inform the questions, not the simulated answers.
 
-[Open the live walkthrough](https://close-gtm-decision-lab.rhasan5.chatgpt.site/) · [Read the decision memo](analysis/decision-memo.md)
+[Open the live walkthrough](https://rhasan55.github.io/close-gtm-decision-lab/) · [Read the decision memo](analysis/decision-memo.md)
 
 ## Start with the decision
 
